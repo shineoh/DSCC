@@ -1,4 +1,4 @@
-#함수 문제
+#함수 연습문제
 #Q8.1 회문
 def palindrome(a_str):
     answer = ""
