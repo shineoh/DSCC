@@ -1,4 +1,4 @@
-#흐름제어, if, for 연습문제
+#흐름제어, if, for 연습문제 Q6.1~3, q7.1~3
 #Q6_1 if 흐름제어
 a=int(input())
 for i in range(1,a+1):
