@@ -34,15 +34,18 @@
 #     print('0')
 
 #Q4. #14681 사분면 고르기
-x = int(input())
-y = int(input())
-if x>0:
-    if y>0:
-        print('1')
-    elif y<0:
-        print('4')
-elif x<0:
-    if y>0:
-        print('2')
-    elif y<0:
-        print('3')
+# x = int(input())
+# y = int(input())
+# if x>0:
+#     if y>0:
+#         print('1')
+#     elif y<0:
+#         print('4')
+# elif x<0:
+#     if y>0:
+#         print('2')
+#     elif y<0:
+#         print('3')
+
+#Q5. #2884 알람시계당기기
+H,M = map(int, input().split)
