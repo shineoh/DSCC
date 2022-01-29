@@ -15,10 +15,45 @@
 #     print(word.find(chr(x)),end=' ') 
 
 #4 #2675 문자열 반복
-T = int(input())
-for i in range(T):
-    R,S = input().split()
-    ans = ''
-    for S_w in S:
-        ans += S_w * int(R)
+# T = int(input())
+# for i in range(T):
+#     R,S = input().split()
+#     ans = ''
+#     for S_w in S:
+#         ans += S_w * int(R)
+#     print(ans)
+
+#5 $1157 단어공부
+word = input().upper()
+lst = list()
+lst.extend(word.upper())
+max = 0
+ans = ''
+for w in word:
+    n = lst.count(w)
+    if n > max:
+        max = n
+        ans = w
+    if n == max:
+        if w == ans:
+            continue
+        else:
+            ans += w
+if len(ans) == 1:
     print(ans)
+else:
+    print('?')
+
+# 다른코드
+word = input().upper()
+lst = list(set(word))
+cnt =list()
+
+for w in lst:
+    n = word.count(w)
+    cnt.append(n)
+
+if cnt.count(max(cnt)) > 1:
+    print('?')
+else:
+    print(lst[(cnt.index(max(cnt)))])
