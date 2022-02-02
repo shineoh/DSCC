@@ -23,18 +23,23 @@ while n>1:
 print(ans)
 
 #q3 #1193 분수찾기
-X=int(input())
+x = int(input())
+num_list = []
 
-line=1
-while X>line:
-    X-=line
-    line+=1
-    
-if line%2==0:
-    a=X
-    b=line-X+1
+num = 0
+num_count = 0
+
+while num_count < x:
+    num += 1
+    num_count += num
+
+num_count -= num
+
+if num % 2 == 0:
+    i = x - num_count
+    j = num - i + 1
 else:
-    a=line-X+1
-    b=X
-    
-print(a, '/', b, sep='')
+    i = num - (x - num_count) + 1
+    j = x - num_count
+
+print(f"{i}/{j}")
