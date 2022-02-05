@@ -20,9 +20,6 @@ if lst == []:
 
 else:
     ans_1 = sum(lst)
-    ans_2= 100
-    for number in lst:
-        if number < ans_2:
-            ans_2 = number
+    ans_2= min(lst)
     print(ans_1)
     print(ans_2)
