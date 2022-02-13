@@ -1,5 +1,26 @@
 #4948 #베트르랑 공준
 
+def PrimeNum_Eratos(N):
+    nums = [True]*(N)
+    for i in range(2, int(N**0.5)+1):
+        if nums[i] == True:
+            for j in range(i+i, N, i):
+                nums[j] =False
+    return [i for i in range(2,N) if nums[i] == True]
+
+while True:
+    N = int(input())
+
+    if N == 0:
+        break
+    lst_prime = PrimeNum_Eratos(2*N + 1)
+    ans = [num for num in lst_prime if num > N]
+    print(len(ans))
+
+
+
+
+
 
 ##시간초과
 # while True:
