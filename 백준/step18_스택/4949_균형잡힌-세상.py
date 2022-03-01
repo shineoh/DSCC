@@ -5,12 +5,25 @@
 while True:
     stack = []
     sentence = input()
+    if sentence == '.':
+        break
+    opener = ['[', '(']
+    closer = [']', ')']
+    ans = 'yes'
     for s in sentence:
-        if s == '[':
+        if s in opener:
             stack.append(s)
-        if s == '{':
-            stack.append(s)
-        if s == '(':
-            stack.append(s)
-        if s == ']':
-
+        if s in closer:
+            if not stack:
+                ans = 'no'
+                break
+            x = stack.pop()
+            if s == ']' and x != '[':
+                ans = 'no'
+                break
+            if s == ')' and x != '(':
+                ans = 'no'
+                break
+    if stack:
+        ans = 'no'
+    print(ans)
