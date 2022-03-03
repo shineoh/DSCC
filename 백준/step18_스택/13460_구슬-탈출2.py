@@ -33,20 +33,22 @@ while queue:
             nbi, nbj = nbi + di, nbj + dj
             bcnt += 1
 
+        if lst[nbi][nbj] != '0':
+            if lst[nri][nrj] == 'O': # 빨간공이 구멍에 위치하면 성공 표시하고 break
+                ans = 1
+                break
 
-        if nri == nbi and nrj == nbj: # 겹치면 이동거리가 먼 것을 한 칸 전으로 이동
-            if rcnt > bcnt:
-                nri -= di
-                nrj -= dj
-            else:
-                nbi -= di
-                nbj -= dj
-        if lst[nri][nrj] == 'O': # 빨간공이 구멍에 위치하면 성공 표시하고 break
-            ans = 1
-            break
-        if visited[nri][nrj][nbi][nbj] == 0: # 방문 표시하기
-            visited[nri][nrj][nbi][nbj] = 1
-    queue.append((nri, nrj, nbi, nbj, cycle + 1))
+            if nri == nbi and nrj == nbj: # 겹치면 이동거리가 먼 것을 한 칸 전으로 이동
+                if rcnt > bcnt:
+                    nri -= di
+                    nrj -= dj
+                else:
+                    nbi -= di
+                    nbj -= dj
+
+            if visited[nri][nrj][nbi][nbj] == 0: # 방문 표시하기
+                visited[nri][nrj][nbi][nbj] = 1
+                queue.append((nri, nrj, nbi, nbj, cycle + 1))
 if ans == 1:
     print(cycle)
 else:
