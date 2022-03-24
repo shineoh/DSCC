@@ -30,7 +30,7 @@ def decode(num):
         '0110111': 8,
         '0001011': 9
     }
-    return dic[num]
+    return str(dic[num])
 
 
 T = int(input())
